@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="一月筠" />
+
+
+
+<meta name="description" content="文/一月筠 -- 转载请注明 --
+BeeHive是用于iOS的app模块化编程的框架实现方案，吸收了Spring框架service的理念来实现模块间的API耦合。基本原理如下…">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS 模块化编程框架 BeeHive">
+<meta property="og:url" content="/2017/02/27/iOS-模块化编程框架-BeeHive/index.html">
+<meta property="og:site_name" content="郭艳军的博客">
+<meta property="og:description" content="文/一月筠 -- 转载请注明 --
+BeeHive是用于iOS的app模块化编程的框架实现方案，吸收了Spring框架service的理念来实现模块间的API耦合。基本原理如下…">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-4ea0e153b38a749c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-e79675eb29ead910.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-cdfab37ea4262d81.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-f28d3dd95dd79ec7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-03-10T08:45:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS 模块化编程框架 BeeHive">
+<meta name="twitter:description" content="文/一月筠 -- 转载请注明 --
+BeeHive是用于iOS的app模块化编程的框架实现方案，吸收了Spring框架service的理念来实现模块间的API耦合。基本原理如下…">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1819713-4ea0e153b38a749c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="郭艳军的博客" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>iOS 模块化编程框架 BeeHive | 郭艳军的博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">一月筠</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:guo-yan-jun@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="http://weibo.com/1778140743" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/TinyJay" title="GitHub"></a>
+                            
+                                <a class="fa 简书" href="http://www.jianshu.com/u/b13ee6afc1e0" title="简书"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io/zh-cn/docs/configuration.html">hexo configuration</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.coding.me/yelee/">yelee</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.cocoachina.com">cocoachina</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.code4app.com">code4app</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://thenounproject.com/">nounproject</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">๑۩ﺴ ﺴ۩๑ 透过指尖目视锦瑟流年，邂逅一场繁华的悸动...一位充满幻想又极富现实主义的移动端开发者，目前正在前端的路上耕耘着...偶尔晕染几篇随笔或诗文，期待更多志同道合的朋友。联系方式：guoyanjun.love@gmail.com</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">一月筠</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">一月筠</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:guo-yan-jun@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1778140743" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/TinyJay" title="GitHub"></a>
+                            
+                                <a class="fa 简书" target="_blank" href="http://www.jianshu.com/u/b13ee6afc1e0" title="简书"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-iOS-模块化编程框架-BeeHive" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/27/iOS-模块化编程框架-BeeHive/" class="article-date">
+      <time datetime="2017-02-27T10:13:00.000Z" itemprop="datePublished">2017-02-27</time>
+</a>
+
+ 
+    <a href="/2017/02/27/iOS-模块化编程框架-BeeHive/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+            <span class="ds-thread-count" ></span>
+        
+        
+    </a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOS 模块化编程框架 BeeHive
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/术业专攻/">术业专攻</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ul>
+<li><strong>文/一月筠</strong> <strong><code>-- 转载请注明 --</code></strong></li>
+<li>BeeHive是用于iOS的app模块化编程的框架实现方案，吸收了Spring框架service的理念来实现模块间的API耦合。基本原理如下…<a id="more"></a>
+</li>
+</ul>
+<p><code>github下载地址:</code><a href="https://github.com/alibaba/BeeHive" target="_blank" rel="external">https://github.com/alibaba/BeeHive</a></p>
+<blockquote>
+<p>BeeHive 详细介绍</p>
+</blockquote>
+<p>BeeHive是用于iOS的app模块化编程的框架实现方案，吸收了Spring框架service的理念来实现模块间的API耦合。基本原理如下:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1819713-4ea0e153b38a749c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="基本原理.jpg"></p>
+<p><strong>实现以下特性</strong></p>
+<ul>
+<li>插件化的模块开发运行框架</li>
+<li>模块具体实现与接口调用分离</li>
+<li>模块生命周期管理，扩展了应用的系统事件</li>
+</ul>
+<p>因为基于Spring的Service理念，虽然可以使模块间的具体实现与接口解耦，但无法避免对接口类的依赖关系。</p>
+<p>为什么不使用invoke以及动态链接库技术实现对接口实现的解耦，类似Apache的DSO的方式。</p>
+<p>主要是考虑学习成本难度以及动态调用实现无法在编译检查阶段检测接口参数变更等问题，动态技术需要更高的编程门槛要求</p>
+<p>BeeHive灵感来源于蜂窝。蜂窝是世界上高度模块化的工程结构，六边形的设计能带来无限扩张的可能。所以我们用了BeeHive来做为这个项目的命名。</p>
+<h2 id="生命周期的变化"><a href="#生命周期的变化" class="headerlink" title="生命周期的变化"></a>生命周期的变化</h2><h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><p>BeeHive会给每个模块提供生命周期事件，用于与BeeHive宿主环境进行必要信息交互 事件分为三种类型：</p>
+<ul>
+<li>系统事件</li>
+<li>通用事件</li>
+<li>业务自定义事件</li>
+</ul>
+<h4 id="系统事件"><a href="#系统事件" class="headerlink" title="系统事件"></a>系统事件</h4><p>系统事件通常是Application生命周期事件，例如DidBecomeActive、WillEnterBackground等系统事件基本工作流如下：<br><img src="http://upload-images.jianshu.io/upload_images/1819713-e79675eb29ead910.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="系统事件基本工作流.jpeg"></p>
+<h4 id="通用事件"><a href="#通用事件" class="headerlink" title="通用事件"></a>通用事件</h4><p>在系统事件的基础之上，扩展了应用的通用事件，例如modSetup、modInit等，可以用于编码实现各插件模块的设置与初始化</p>
+<p>扩展的通用事件如下：<br><img src="http://upload-images.jianshu.io/upload_images/1819713-cdfab37ea4262d81.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="通用事件.jpeg"></p>
+<h4 id="业务自定义事件"><a href="#业务自定义事件" class="headerlink" title="业务自定义事件"></a>业务自定义事件</h4><p>如果觉得系统事件、通用事件不足以满足需要，我们还将事件封装简化成BHAppdelgate，你可以通过继承BHAppdelegate来扩展自己的事件。</p>
+<h4 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h4><p>模块注册的方式有静态注册与动态注册两种</p>
+<ul>
+<li>静态注册<br>通过在BeeHive.plist文件中注册符合BHModuleProtocol协议模块类<br><img src="http://upload-images.jianshu.io/upload_images/1819713-f28d3dd95dd79ec7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="静态注册.png"></li>
+<li>动态注册</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@implementation HomeModule</div><div class="line"><span class="function"><span class="title">BH_EXPORT_MODULE</span><span class="params">()</span></span>  <span class="comment">//声明该类为模块入口</span></div></pre></td></tr></table></figure>
+<p>在模块入口类实现中 使用BH_EXPORT_MODULE()宏声明该类为模块入口实现类</p>
+<h4 id="异步加载"><a href="#异步加载" class="headerlink" title="异步加载"></a>异步加载</h4><p>如果设置模块导出为BH_EXPORT_MODULE(YES)，则会在启动之后第一屏内容展现之前异步执行模块的初始化，可以优化启动时时间消耗</p>
+<h4 id="编程开发"><a href="#编程开发" class="headerlink" title="编程开发"></a>编程开发</h4><p>BHModuleProtocol为各个模块提供了每个模块可以hook的函数，用于实现插件逻辑以及代码实现</p>
+<ul>
+<li>设置环境变量<br>通过context.env可以判断我们的应用环境状态来决定我们如何配置我们的应用</li>
+</ul>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)<span class="string">modSetup:</span>(BHContext *)context</div><div class="line">&#123;</div><div class="line">    <span class="keyword">switch</span> (context.env) &#123;</div><div class="line">        <span class="keyword">case</span> <span class="string">BHEnvironmentDev:</span></div><div class="line">        <span class="comment">//....初始化开发环境</span></div><div class="line">        <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="string">BHEnvironmentProd:</span></div><div class="line">        <span class="comment">//....初始化生产环境</span></div><div class="line"><span class="symbol">        default:</span></div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>模块初始化<br>如果模块有需要启动时初始化的逻辑，可以在modInit里编写，例如模块注册一个外部模块可以访问的Service接口</li>
+</ul>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)<span class="string">modInit:</span>(BHContext *)context</div><div class="line">&#123;</div><div class="line">    <span class="comment">//注册模块的接口服务</span></div><div class="line">    [[BeeHive shareInstance] <span class="string">registerService:</span><span class="meta">@protocol</span>(UserTrackServiceProtocol) <span class="string">service:</span>[BHUserTrackViewController <span class="class"><span class="keyword">class</span>]];</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>处理系统事件<br>系统的事件会被传递给每个模块，让每个模块自己决定编写业务处理逻辑，比如3D-Touch功能</li>
+</ul>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-(void)modQuickAction:(<span class="keyword">BHContext </span>*)<span class="built_in">context</span></div><div class="line">&#123;</div><div class="line">    [self process:<span class="built_in">context</span>.<span class="keyword">shortcutItem </span>handler:<span class="built_in">context</span>.<span class="keyword">scompletionHandler];</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="模间调用"><a href="#模间调用" class="headerlink" title="模间调用"></a>模间调用</h4><p>通过处理Event编写各个业务模块可以实现插件化编程，各业务模块之间没有任何依赖，core与module之间通过event交互，实现了插件隔离。但有时候我们需要模块间的相互调用某些功能来协同完成功能。 通常会有三种形式的接口访问形式</p>
+<ul>
+<li>基于接口的实现Service访问方式（java spring框架实现）</li>
+<li>基于函数调用约定实现的Export Method(PHP的extension，ReactNatve的扩展机制)</li>
+<li>基于跨应用实现的Url route模式(iphone app之间的互访)</li>
+</ul>
+<p>我们目前实现了第一种方式，后续会逐步实现后两种方式</p>
+<h4 id="Servcie访问"><a href="#Servcie访问" class="headerlink" title="Servcie访问"></a>Servcie访问</h4><p>Service访问的优点是可以编译时检查发现接口的变更，从而及时修正接口问题。缺点是需要依赖接口定义的头文件，通过模块增加得越多，维护接口定义的也有一定工作量。以为HomeServiceProtocol为例</p>
+<ul>
+<li>定义HomeServiceProtocol暴露模块对外访问的接口</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">HomeServiceProtocol</span> &lt;<span class="title">NSObject</span>, <span class="title">BHServiceProtocol</span>&gt;</span></div><div class="line">-(<span class="keyword">void</span>)registerViewController:(<span class="built_in">UIViewController</span> *)vc title:(<span class="built_in">NSString</span> *)title iconName:(<span class="built_in">NSString</span> *)iconName;</div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+<ul>
+<li>注册Service有三种方式</li>
+<li>声明式注册</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@implementation HomeService</div><div class="line"><span class="function"><span class="title">BH_EXPORT_SERVICE</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<ul>
+<li>API注册</li>
+</ul>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[<span class="name">BeeHive</span> shareInstance] registerService:@protocol(<span class="name">HomeServiceProtocol</span>) service:[<span class="name">BHViewController</span> class]]<span class="comment">;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>BHService.plist注册</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="meta">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">plist</span> <span class="attr">version</span>=<span class="string">"1.0"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">dict</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>HomeServiceProtocol<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">string</span>&gt;</span>BHViewController<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">dict</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">plist</span>&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>调用</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"BHService.h"</span></span></div><div class="line"><span class="keyword">id</span>&lt; HomeServiceProtocol &gt; homeVc = [[BeeHive shareInstance] createService:<span class="class"><span class="keyword">@protocol</span>(<span class="title">HomeServiceProtocol</span>)];</span></div></pre></td></tr></table></figure>
+<h4 id="单例与多例"><a href="#单例与多例" class="headerlink" title="单例与多例"></a>单例与多例</h4><p>对于有些场景下，我们访问每个声明为service的对象，希望对象能保留一些状态，那我们需要声明这个service对象是一个单例对象。</p>
+<p>我们只需要在service对象中实现事件函数</p>
+<p>声明<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-(<span class="built_in">BOOL</span>) singleton</div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>通过createService获取的对象则为单例对象，如果实现上面函数返回的是NO，则createService返回的是多例<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">id&lt; HomeServiceProtocol &gt; homeVc = [[<span class="keyword">BeeHive </span><span class="keyword">shareInstance] </span>createService:@protocol(HomeServiceProtocol)]<span class="comment">;</span></div></pre></td></tr></table></figure></p>
+<h3 id="上下文环境Context"><a href="#上下文环境Context" class="headerlink" title="上下文环境Context"></a>上下文环境Context</h3><ul>
+<li>初始化设置应用的项目信息，并在各模块间共享整个应用程序的信息</li>
+</ul>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions</div><div class="line">&#123;</div><div class="line">    [BHContext shareInstance].env ＝ BHEnvironmentDev; <span class="comment">//定义应用的运行开发环境</span></div><div class="line">    [BHContext shareInstance].application = application;</div><div class="line">    [BHContext shareInstance].launchOptions = launchOptions;</div><div class="line">    [BHContext shareInstance].moduleConfigName = <span class="string">@"BeeHive.bundle/CustomModulePlist"</span>;<span class="comment">//可选，默认为BeeHive.bundle/BeeHive.plist</span></div><div class="line">    [BHContext shareInstance].serviceConfigName =  <span class="string">@"BeeHive.bundle/CustomServicePlist"</span>;<span class="comment">//可选，默认为BeeHive.bundle/BHService.plist</span></div><div class="line">    [[BeeHive shareInstance] setContext:[BHContext shareInstance]];</div><div class="line">    [<span class="keyword">super</span> application:application didFinishLaunchingWithOptions:launchOptions];</div><div class="line">    <span class="keyword">id</span>&lt;HomeServiceProtocol&gt; homeVc = [[BeeHive shareInstance] createService:<span class="class"><span class="keyword">@protocol</span>(<span class="title">HomeServiceProtocol</span>)];</span></div><div class="line">    <span class="keyword">if</span> ([homeVc isKindOfClass:[<span class="built_in">UIViewController</span> <span class="keyword">class</span>]]) &#123;</div><div class="line">        <span class="built_in">UINavigationController</span> *navCtrl = [[<span class="built_in">UINavigationController</span> alloc] initWithRootViewController:(<span class="built_in">UIViewController</span>*)homeVc];</div><div class="line">        <span class="keyword">self</span>.window = [[<span class="built_in">UIWindow</span> alloc] initWithFrame:[<span class="built_in">UIScreen</span> mainScreen].bounds];</div><div class="line">        <span class="keyword">self</span>.window.rootViewController = navCtrl;</div><div class="line">        [<span class="keyword">self</span>.window makeKeyAndVisible];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>更多细节可以参考Example用例</code></p>
+<ul>
+<li>集成方式</li>
+</ul>
+<p><code>use cocoapods</code><br><code>pod &quot;BeeHive&quot;, &#39;1.0.0&#39;</code></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/02/27/iOS-模块化编程框架-BeeHive/">iOS 模块化编程框架 BeeHive</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">一月筠</a></p>
+        <p><span>发布时间:</span>2017-02-27, 18:13:00</p>
+        <p><span>最后更新:</span>2017-03-10, 16:45:33</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/02/27/iOS-模块化编程框架-BeeHive/" title="iOS 模块化编程框架 BeeHive">/2017/02/27/iOS-模块化编程框架-BeeHive/</a>
+            <span class="copy-path" data-clipboard-text="原文: /2017/02/27/iOS-模块化编程框架-BeeHive/　　作者: 一月筠" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/03/06/Mac-安装-nodejs-（图文详细步骤）及SublimeText运行JavaScript控制台/">
+                    Mac 安装 nodejs （图文详细步骤）及SublimeText运行JavaScript控制台
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/02/20/iOS加载单张图片导致崩溃的分析/">
+                    iOS加载单张图片导致崩溃的分析
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#生命周期的变化"><span class="toc-number">1.</span> <span class="toc-text">生命周期的变化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#事件"><span class="toc-number">1.1.</span> <span class="toc-text">事件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#系统事件"><span class="toc-number">1.1.1.</span> <span class="toc-text">系统事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通用事件"><span class="toc-number">1.1.2.</span> <span class="toc-text">通用事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#业务自定义事件"><span class="toc-number">1.1.3.</span> <span class="toc-text">业务自定义事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注册"><span class="toc-number">1.1.4.</span> <span class="toc-text">注册</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#异步加载"><span class="toc-number">1.1.5.</span> <span class="toc-text">异步加载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编程开发"><span class="toc-number">1.1.6.</span> <span class="toc-text">编程开发</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模间调用"><span class="toc-number">1.1.7.</span> <span class="toc-text">模间调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Servcie访问"><span class="toc-number">1.1.8.</span> <span class="toc-text">Servcie访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#单例与多例"><span class="toc-number">1.1.9.</span> <span class="toc-text">单例与多例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#上下文环境Context"><span class="toc-number">1.2.</span> <span class="toc-text">上下文环境Context</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-6 i,
+        .toc-level-6 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"iOS 模块化编程框架 BeeHive　| 郭艳军的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/02/27/iOS-模块化编程框架-BeeHive/" data-title="iOS 模块化编程框架 BeeHive" data-url="/2017/02/27/iOS-模块化编程框架-BeeHive/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"null"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+            // Add comment count
+            $(function(){ 
+                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=null&threads=2017/02/27/iOS-模块化编程框架-BeeHive/&callback=?";
+                $.getJSON(jsonUrl, function(result){
+                    $.each(result.response, function(i, field){
+                        var value = field.comments;
+                        if (value > 0) {
+                            $(".count-comment").text(value);
+                            return;
+                        }
+                    })
+                })
+            })
+        
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/03/06/Mac-安装-nodejs-（图文详细步骤）及SublimeText运行JavaScript控制台/" title="上一篇: Mac 安装 nodejs （图文详细步骤）及SublimeText运行JavaScript控制台">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/02/20/iOS加载单张图片导致崩溃的分析/" title="下一篇: iOS加载单张图片导致崩溃的分析">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/07/最全iOS开发工具集合/">最全iOS开发工具集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/03/06/Mac-安装-nodejs-（图文详细步骤）及SublimeText运行JavaScript控制台/">Mac 安装 nodejs （图文详细步骤）及SublimeText运行JavaScript控制台</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/27/iOS-模块化编程框架-BeeHive/">iOS 模块化编程框架 BeeHive</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/20/iOS加载单张图片导致崩溃的分析/">iOS加载单张图片导致崩溃的分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/16/iOS-静默方式发送邮件(SKPSMTPMessage)/">iOS-静默方式发送邮件(SKPSMTPMessage)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/01/hexo命令和一些使用方法/">hexo命令和一些使用方法</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 一月筠
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/GithubRepoWidget.js"></script>
+
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+             github: ".github-widget a", 
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
