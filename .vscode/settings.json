@@ -1,0 +1,14 @@
+{
+  // 保存时自动 Format
+  "editor.formatOnSave": true,
+  // 使用 prettier 格式化
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // 启用 eslint
+  "eslint.enable": true,
+  // 保存时自动运行 eslint
+  "eslint.run": "onSave",
+  // 支持的文件扩展名
+  "eslint.options": {
+    "extensions": [".js", ".jsx", ".ts", ".tsx"]
+  }
+}
