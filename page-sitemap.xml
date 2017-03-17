@@ -7,22 +7,36 @@
     </url>
     
     <url>
-        <loc>http://www.guoyanjun.top/essay/</loc>
-        <lastmod>2017-03-16T07:54:06.000Z</lastmod>
+        <loc>http://www.guoyanjun.top/CNAME.html</loc>
+        <lastmod>2017-03-17T09:05:59.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://www.guoyanjun.top/about/</loc>
-        <lastmod>2017-03-16T07:42:28.000Z</lastmod>
+        <loc>http://www.guoyanjun.top/photo/</loc>
+        <lastmod>2017-03-17T08:24:59.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>http://www.guoyanjun.top//404.html</loc>
-        <lastmod>2017-03-16T07:37:14.000Z</lastmod>
+        <lastmod>2017-03-17T03:38:41.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>http://www.guoyanjun.top/about/</loc>
+        <lastmod>2017-03-17T02:55:17.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>http://www.guoyanjun.top/essay/</loc>
+        <lastmod>2017-03-16T07:54:06.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
