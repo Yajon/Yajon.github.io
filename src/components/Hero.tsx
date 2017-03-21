@@ -197,7 +197,7 @@ export default function Hero() {
                 </p>
 
                 <div className="bg-gray-200 border-2 border-dashed rounded-xl w-32 h-32 mx-auto flex items-center justify-center mb-6">
-                  <span className="text-gray-500">
+                  <span className="text-gray-500 p-1.5">
                     <img src={IMAGE_CONFIG_DATA.img_weChatQR} alt="二维码" />
                   </span>
                 </div>
