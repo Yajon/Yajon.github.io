@@ -8,7 +8,7 @@
     
     <url>
         <loc>http://www.guoyanjun.top/essay/</loc>
-        <lastmod>2017-03-20T09:35:23.000Z</lastmod>
+        <lastmod>2017-03-21T07:54:54.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -23,13 +23,6 @@
     <url>
         <loc>http://www.guoyanjun.top/tags/</loc>
         <lastmod>2017-03-20T02:10:29.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>http://www.guoyanjun.top/photo/</loc>
-        <lastmod>2017-03-17T08:24:59.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
