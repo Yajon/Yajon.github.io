@@ -113,6 +113,6 @@
 $(function(){
   $('#slogan').typer({
     search: 'stranger',
-    replace: ['colleague', 'classmates', 'friends and relatives']
+    replace: ['colleague', 'classmates', 'friends','relatives']
   })
 })
