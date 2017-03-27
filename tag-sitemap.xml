@@ -2,22 +2,22 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>http://www.guoyanjun.top/tags/hexo/</loc>
-        <lastmod>2017-03-24T08:00:09.000Z</lastmod>
+        <loc>http://blog.guoyanjun.top/tags/hexo/</loc>
+        <lastmod>2017-03-27T08:08:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://www.guoyanjun.top/tags/iOS/</loc>
-        <lastmod>2017-03-24T08:00:09.000Z</lastmod>
+        <loc>http://blog.guoyanjun.top/tags/iOS/</loc>
+        <lastmod>2017-03-27T08:08:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://www.guoyanjun.top/tags/poetry/</loc>
-        <lastmod>2017-03-24T08:00:09.000Z</lastmod>
+        <loc>http://blog.guoyanjun.top/tags/poetry/</loc>
+        <lastmod>2017-03-27T08:08:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

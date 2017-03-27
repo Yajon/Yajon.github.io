@@ -64,86 +64,19 @@ html {
   }
 }
 /*--------------------------------华丽的分割线-----------------------------------*/
-body {
-  margin: 0;
-  padding: 0;
-  font-family: monospace;
-  background-size: 100%;
-  top:0; 
-  left:0; 
-  height:100%; 
-  width:100%; 
-  background-position: center 0; 
-  background-attachment:fixed; 
-  background-size: cover; 
-  -webkit-background-size: cover;/* 兼容Webkit内核浏览器如Chrome和Safari */ 
-  -o-background-size: cover;/* 兼容Opera */ 
-  zoom: 1; 
-}
-
-nav {
-  width: 100%;
-  height: 60px;
-  max-width: device-width;
-  background: rgba(0, 0, 0, .3);
-  position: top;
-  z-index: 10;
-}
-
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  text-align: center;
-  float: left;
-  line-height: 60px;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-nav ul li a {
-  width: 14vw;
-  max-width: 100% / 5.0;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 600;
-  display: block;
-}
-
-nav ul li a:hover,
-nav ul li a:visited {
-  text-decoration: none;
-  background: rgba(201, 218, 248, .8);
-  color: #fff;
-}
-
-.words {
-  font-size: 40px;
-  letter-spacing: 10px;
-  position: absolute;
-  top: 50%;
-  left: 30%;
-}
-
-.imgw {
-  position: relative;
-}
 
 #slogan {
-  text-align: center;
-  font-size: 36px;
-  margin-top: 15%;
-  color: #fff;
+	text-align: center;
+	font-size: 28px;
+	margin-top: 6%;
+	color: #fff;
 }
 
 #slogan span {
-  color: #ff0
+	color: #ff0
 }
 
 #slogan span.selected {
-  background: #09f;
-  color: #fff;
+	background: #09f;
+	color: #fff;
 }
