@@ -361,31 +361,7 @@
 </article>
 
 
-
-	<! -- 添加捐赠图标 -->
-<div class ="post-donate">
-    <div id="donate_board" class="donate_bar center">
-        <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏"></a>
-        <span class="donate_txt">
-           ↑<br>
-           欣赏此文？求鼓励，求支持！
-        </span>
-        <br>
-      </div>  
-    <div id="donate_guide" class="donate_bar center hidden" >
-        <!-- 支付宝打赏图案 -->
-        <img src="/img/Alipay.jpg" alt="支付宝打赏"> 
-        <!-- 微信打赏图案 -->
-        <img src="/img/WeChatpay.jpg" alt="微信打赏">  
-    </div>
-    <script type="text/javascript">
-        document.getElementById('btn_donate').onclick = function(){
-            $('#donate_board').addClass('hidden');
-            $('#donate_guide').removeClass('hidden');
-        }
-    </script>
-</div>
-<! -- 添加捐赠图标 -->
+<!-- 添加打赏功能 只在所有post文件下的文章中显示-->
 
 
 
@@ -481,22 +457,23 @@
     <script>
         
     </script>
-    <!--添加百度自动推送代码-->
-	 <script>
-	 (function(){
-	     var bp = document.createElement('script');
-	     var curProtocol = window.location.protocol.split(':')[0];
-	     if (curProtocol === 'https') {
-	         bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-	     }
-	     else {
-	         bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-	     }
-	     var s = document.getElementsByTagName("script")[0];
-	     s.parentNode.insertBefore(bp, s);
-	 })();
-	 </script>
-</div>
+
+
+<!--添加百度自动推送代码-->
+<script>
+	(function(){
+	 var bp = document.createElement('script');
+	 var curProtocol = window.location.protocol.split(':')[0];
+	 if (curProtocol === 'https') {
+	     bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	 }
+	 else {
+	     bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	 }
+	 var s = document.getElementsByTagName("script")[0];
+	 s.parentNode.insertBefore(bp, s);
+	})();
+</script></div>
       <footer id="footer">
     <div class="outer">
         <div id="footer-info">
