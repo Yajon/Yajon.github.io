@@ -27,7 +27,7 @@ BeeHive是用于iOS的app模块化编程的框架实现方案，吸收了Spring�
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-e79675eb29ead910.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-cdfab37ea4262d81.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-f28d3dd95dd79ec7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-03-29T10:33:09.000Z">
+<meta property="og:updated_time" content="2017-03-30T09:03:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS 模块化编程框架 BeeHive">
 <meta name="twitter:description" content="文/一月筠 -- 转载请注明 --
@@ -189,7 +189,7 @@ BeeHive是用于iOS的app模块化编程的框架实现方案，吸收了Spring�
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" href="mailto:guo-yan-jun@qq.com" title="Email"></a>
+                                <a class="fa Email" href="mailto:guoyanjun.love@gmail.com" title="Email"></a>
                             
                                 <a class="fa 新浪微博" href="http://weibo.com/1778140743" title="新浪微博"></a>
                             
@@ -281,7 +281,7 @@ BeeHive是用于iOS的app模块化编程的框架实现方案，吸收了Spring�
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" target="_blank" href="mailto:guo-yan-jun@qq.com" title="Email"></a>
+                                <a class="fa Email" target="_blank" href="mailto:guoyanjun.love@gmail.com" title="Email"></a>
                             
                                 <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1778140743" title="新浪微博"></a>
                             
@@ -306,15 +306,6 @@ BeeHive是用于iOS的app模块化编程的框架实现方案，吸收了Spring�
       <time datetime="2017-02-27T10:13:00.000Z" itemprop="datePublished">2017-02-27</time>
 </a>
 
- 
-    <a href="/2017/02/27/ios-modular-programing-framework-behive.html#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-            <span class="ds-thread-count" ></span>
-        
-        
-    </a>
 
     </div>
   
@@ -395,15 +386,15 @@ BeeHive是用于iOS的app模块化编程的框架实现方案，吸收了Spring�
 <ul>
 <li>设置环境变量<br>通过context.env可以判断我们的应用环境状态来决定我们如何配置我们的应用</li>
 </ul>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)<span class="string">modSetup:</span>(BHContext *)context</div><div class="line">&#123;</div><div class="line">    <span class="keyword">switch</span> (context.env) &#123;</div><div class="line">        <span class="keyword">case</span> <span class="string">BHEnvironmentDev:</span></div><div class="line">        <span class="comment">//....初始化开发环境</span></div><div class="line">        <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="string">BHEnvironmentProd:</span></div><div class="line">        <span class="comment">//....初始化生产环境</span></div><div class="line"><span class="symbol">        default:</span></div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)modSetup:(BHContext *)context</div><div class="line">&#123;</div><div class="line">    <span class="keyword">switch</span> (context.env) &#123;</div><div class="line">        <span class="keyword">case</span> BHEnvironmentDev:</div><div class="line">        <span class="comment">//....初始化开发环境</span></div><div class="line">        <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> BHEnvironmentProd:</div><div class="line">        <span class="comment">//....初始化生产环境</span></div><div class="line">        <span class="keyword">default</span>:</div><div class="line">        <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
 <li>模块初始化<br>如果模块有需要启动时初始化的逻辑，可以在modInit里编写，例如模块注册一个外部模块可以访问的Service接口</li>
 </ul>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)<span class="string">modInit:</span>(BHContext *)context</div><div class="line">&#123;</div><div class="line">    <span class="comment">//注册模块的接口服务</span></div><div class="line">    [[BeeHive shareInstance] <span class="string">registerService:</span><span class="meta">@protocol</span>(UserTrackServiceProtocol) <span class="string">service:</span>[BHUserTrackViewController <span class="class"><span class="keyword">class</span>]];</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)modInit:(BHContext *)context</div><div class="line">&#123;</div><div class="line">    <span class="comment">//注册模块的接口服务</span></div><div class="line">    [[BeeHive shareInstance] registerService:<span class="class"><span class="keyword">@protocol</span>(<span class="title">UserTrackServiceProtocol</span>) <span class="title">service</span>:[<span class="title">BHUserTrackViewController</span> <span class="title">class</span>]];</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
 <li>处理系统事件<br>系统的事件会被传递给每个模块，让每个模块自己决定编写业务处理逻辑，比如3D-Touch功能</li>
 </ul>
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-(void)modQuickAction:(<span class="keyword">BHContext </span>*)<span class="built_in">context</span></div><div class="line">&#123;</div><div class="line">    [self process:<span class="built_in">context</span>.<span class="keyword">shortcutItem </span>handler:<span class="built_in">context</span>.<span class="keyword">scompletionHandler];</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)modQuickAction:(BHContext *)context</div><div class="line">&#123;</div><div class="line">    [<span class="keyword">self</span> process:context.shortcutItem handler:context.scompletionHandler];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="模间调用"><a href="#模间调用" class="headerlink" title="模间调用"></a>模间调用</h4><p>通过处理Event编写各个业务模块可以实现插件化编程，各业务模块之间没有任何依赖，core与module之间通过event交互，实现了插件隔离。但有时候我们需要模块间的相互调用某些功能来协同完成功能。 通常会有三种形式的接口访问形式</p>
 <ul>
 <li>基于接口的实现Service访问方式（java spring框架实现）</li>
@@ -415,16 +406,16 @@ BeeHive是用于iOS的app模块化编程的框架实现方案，吸收了Spring�
 <ul>
 <li>定义HomeServiceProtocol暴露模块对外访问的接口</li>
 </ul>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">HomeServiceProtocol</span> &lt;<span class="title">NSObject</span>, <span class="title">BHServiceProtocol</span>&gt;</span></div><div class="line">-(<span class="keyword">void</span>)registerViewController:(<span class="built_in">UIViewController</span> *)vc title:(<span class="built_in">NSString</span> *)title iconName:(<span class="built_in">NSString</span> *)iconName;</div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">HomeServiceProtocol</span> &lt;<span class="title">NSObject</span>, <span class="title">BHServiceProtocol</span>&gt;</span></div><div class="line">-(<span class="keyword">void</span>)registerViewController:(<span class="built_in">UIViewController</span> *)vc title:(<span class="built_in">NSString</span> *)title iconName:(<span class="built_in">NSString</span> *)iconName;</div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure>
 <ul>
 <li>注册Service有三种方式</li>
 <li>声明式注册</li>
 </ul>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@implementation HomeService</div><div class="line"><span class="function"><span class="title">BH_EXPORT_SERVICE</span><span class="params">()</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">HomeService</span></span></div><div class="line">BH_EXPORT_SERVICE()</div></pre></td></tr></table></figure>
 <ul>
 <li>API注册</li>
 </ul>
-<figure class="highlight scheme"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[<span class="name">BeeHive</span> shareInstance] registerService:@protocol(<span class="name">HomeServiceProtocol</span>) service:[<span class="name">BHViewController</span> class]]<span class="comment">;</span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[BeeHive shareInstance] registerService:<span class="class"><span class="keyword">@protocol</span>(<span class="title">HomeServiceProtocol</span>) <span class="title">service</span>:[<span class="title">BHViewController</span> <span class="title">class</span>]];</span></div></pre></td></tr></table></figure>
 <ul>
 <li>BHService.plist注册</li>
 </ul>
@@ -432,15 +423,17 @@ BeeHive是用于iOS的app模块化编程的框架实现方案，吸收了Spring�
 <ul>
 <li>调用</li>
 </ul>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"BHService.h"</span></span></div><div class="line"><span class="keyword">id</span>&lt; HomeServiceProtocol &gt; homeVc = [[BeeHive shareInstance] createService:<span class="class"><span class="keyword">@protocol</span>(<span class="title">HomeServiceProtocol</span>)];</span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"BHService.h"</span></span></div><div class="line"><span class="keyword">id</span>&lt; HomeServiceProtocol &gt; homeVc = [[BeeHive shareInstance] createService:<span class="class"><span class="keyword">@protocol</span>(<span class="title">HomeServiceProtocol</span>)];</span></div></pre></td></tr></table></figure>
 <h4 id="单例与多例"><a href="#单例与多例" class="headerlink" title="单例与多例"></a>单例与多例</h4><p>对于有些场景下，我们访问每个声明为service的对象，希望对象能保留一些状态，那我们需要声明这个service对象是一个单例对象。</p>
 <p>我们只需要在service对象中实现事件函数</p>
-<p>声明<br><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-(<span class="built_in">BOOL</span>) singleton</div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>通过createService获取的对象则为单例对象，如果实现上面函数返回的是NO，则createService返回的是多例<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">id&lt; HomeServiceProtocol &gt; homeVc = [[<span class="keyword">BeeHive </span><span class="keyword">shareInstance] </span>createService:@protocol(HomeServiceProtocol)]<span class="comment">;</span></div></pre></td></tr></table></figure></p>
+<p>声明</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-(<span class="built_in">BOOL</span>) singleton</div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>通过createService获取的对象则为单例对象，如果实现上面函数返回的是NO，则createService返回的是多例</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">id</span>&lt; HomeServiceProtocol &gt; homeVc = [[BeeHive shareInstance] createService:<span class="class"><span class="keyword">@protocol</span>(<span class="title">HomeServiceProtocol</span>)];</span></div></pre></td></tr></table></figure>
 <h3 id="上下文环境Context"><a href="#上下文环境Context" class="headerlink" title="上下文环境Context"></a>上下文环境Context</h3><ul>
 <li>初始化设置应用的项目信息，并在各模块间共享整个应用程序的信息</li>
 </ul>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions</div><div class="line">&#123;</div><div class="line">    [BHContext shareInstance].env ＝ BHEnvironmentDev; <span class="comment">//定义应用的运行开发环境</span></div><div class="line">    [BHContext shareInstance].application = application;</div><div class="line">    [BHContext shareInstance].launchOptions = launchOptions;</div><div class="line">    [BHContext shareInstance].moduleConfigName = <span class="string">@"BeeHive.bundle/CustomModulePlist"</span>;<span class="comment">//可选，默认为BeeHive.bundle/BeeHive.plist</span></div><div class="line">    [BHContext shareInstance].serviceConfigName =  <span class="string">@"BeeHive.bundle/CustomServicePlist"</span>;<span class="comment">//可选，默认为BeeHive.bundle/BHService.plist</span></div><div class="line">    [[BeeHive shareInstance] setContext:[BHContext shareInstance]];</div><div class="line">    [<span class="keyword">super</span> application:application didFinishLaunchingWithOptions:launchOptions];</div><div class="line">    <span class="keyword">id</span>&lt;HomeServiceProtocol&gt; homeVc = [[BeeHive shareInstance] createService:<span class="class"><span class="keyword">@protocol</span>(<span class="title">HomeServiceProtocol</span>)];</span></div><div class="line">    <span class="keyword">if</span> ([homeVc isKindOfClass:[<span class="built_in">UIViewController</span> <span class="keyword">class</span>]]) &#123;</div><div class="line">        <span class="built_in">UINavigationController</span> *navCtrl = [[<span class="built_in">UINavigationController</span> alloc] initWithRootViewController:(<span class="built_in">UIViewController</span>*)homeVc];</div><div class="line">        <span class="keyword">self</span>.window = [[<span class="built_in">UIWindow</span> alloc] initWithFrame:[<span class="built_in">UIScreen</span> mainScreen].bounds];</div><div class="line">        <span class="keyword">self</span>.window.rootViewController = navCtrl;</div><div class="line">        [<span class="keyword">self</span>.window makeKeyAndVisible];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions</div><div class="line">&#123;</div><div class="line">    [BHContext shareInstance].env ＝ BHEnvironmentDev; <span class="comment">//定义应用的运行开发环境</span></div><div class="line">    [BHContext shareInstance].application = application;</div><div class="line">    [BHContext shareInstance].launchOptions = launchOptions;</div><div class="line">    [BHContext shareInstance].moduleConfigName = <span class="string">@"BeeHive.bundle/CustomModulePlist"</span>;<span class="comment">//可选，默认为BeeHive.bundle/BeeHive.plist</span></div><div class="line">    [BHContext shareInstance].serviceConfigName =  <span class="string">@"BeeHive.bundle/CustomServicePlist"</span>;<span class="comment">//可选，默认为BeeHive.bundle/BHService.plist</span></div><div class="line">    [[BeeHive shareInstance] setContext:[BHContext shareInstance]];</div><div class="line">    [<span class="keyword">super</span> application:application didFinishLaunchingWithOptions:launchOptions];</div><div class="line">    <span class="keyword">id</span>&lt;HomeServiceProtocol&gt; homeVc = [[BeeHive shareInstance] createService:<span class="class"><span class="keyword">@protocol</span>(<span class="title">HomeServiceProtocol</span>)];</span></div><div class="line">    <span class="keyword">if</span> ([homeVc isKindOfClass:[<span class="built_in">UIViewController</span> <span class="keyword">class</span>]]) &#123;</div><div class="line">        <span class="built_in">UINavigationController</span> *navCtrl = [[<span class="built_in">UINavigationController</span> alloc] initWithRootViewController:(<span class="built_in">UIViewController</span>*)homeVc];</div><div class="line">        <span class="keyword">self</span>.window = [[<span class="built_in">UIWindow</span> alloc] initWithFrame:[<span class="built_in">UIScreen</span> mainScreen].bounds];</div><div class="line">        <span class="keyword">self</span>.window.rootViewController = navCtrl;</div><div class="line">        [<span class="keyword">self</span>.window makeKeyAndVisible];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><code>更多细节可以参考Example用例</code></p>
 <ul>
 <li>集成方式</li>
@@ -457,7 +450,7 @@ BeeHive是用于iOS的app模块化编程的框架实现方案，吸收了Spring�
         <p><span>本文标题:</span><a href="/2017/02/27/ios-modular-programing-framework-behive.html">iOS 模块化编程框架 BeeHive</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">一月筠</a></p>
         <p><span>发布时间:</span>2017-02-27, 18:13:00</p>
-        <p><span>最后更新:</span>2017-03-29, 18:33:09</p>
+        <p><span>最后更新:</span>2017-03-30, 17:03:28</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/02/27/ios-modular-programing-framework-behive.html" title="iOS 模块化编程框架 BeeHive">http://blog.guoyanjun.top/2017/02/27/ios-modular-programing-framework-behive.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.guoyanjun.top/2017/02/27/ios-modular-programing-framework-behive.html　　作者: 一月筠" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -573,61 +566,16 @@ BeeHive是用于iOS的app模块化编程的框架实现方案，吸收了Spring�
 
 
     
-      <div class="duoshuo" id="comments">
-    <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2017/02/27/ios-modular-programing-framework-behive.html" data-title="iOS 模块化编程框架 BeeHive" data-url="http://blog.guoyanjun.top/2017/02/27/ios-modular-programing-framework-behive.html"></div>
-    <script>
-        var duoshuoQuery = {short_name:"null"};
-        var loadComment = function(){
-            var d = document, s = d.createElement('script');
-            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            s.async = true; s.charset = 'UTF-8';
-            (d.head || d.body).appendChild(s);
-        }
-
-        
-            // Add comment count
-            $(function(){ 
-                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=null&threads=2017/02/27/ios-modular-programing-framework-behive.html&callback=?";
-                $.getJSON(jsonUrl, function(result){
-                    $.each(result.response, function(i, field){
-                        var value = field.comments;
-                        if (value > 0) {
-                            $(".count-comment").text(value);
-                            return;
-                        }
-                    })
-                })
-            })
-        
-    </script>
-    
-    <aside class="comment-bar">
-        <a href="javascript:void(0);">
-            <i class="fa fa-commenting-o animated infinite pulse"></i>
-            <i class="fa fa-spinner fa-pulse"></i>
-            <span class="count-comment"></span>
-        </a>
-    </aside>
-    <script>
-        var $commentBar = $("#comments aside.comment-bar");
-        var load$hide = function(){
-            $commentBar.find("a > i").toggle();
-            loadComment();
-            $commentBar.fadeOut(800);
-        }
-        $commentBar.click(function(){
-            load$hide();
-        })
-        $commentBar.children("a").hover(function(){
-            load$hide();
-        })
-        if (window.location.hash === "#comments") {
-            load$hide();
-        }
-    </script>
-
-</div>
+        <div class="changyan" id="comments">
+<!--高速版，加载速度快，使用前需测试页面的兼容性-->
+<div id="SOHUCS" sid="iOS 模块化编程框架 BeeHive"></div>
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cysVaUJeL'; 
+var conf = 'prod_46b92ad4f9996bb0f4fa145a39533f50'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
     
 
 

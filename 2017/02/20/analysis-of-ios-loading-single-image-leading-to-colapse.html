@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="郭艳军的那些事儿">
 <meta property="og:description" content="文/一月筠 -- 转载请注明 --
 首先iPhone毕竟是手持设备，它所占有的内存是有限的，当图片过大的时候会引起内存导致的崩溃现象…">
-<meta property="og:updated_time" content="2017-03-29T10:33:11.000Z">
+<meta property="og:updated_time" content="2017-03-30T09:03:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS加载单张图片导致崩溃的分析">
 <meta name="twitter:description" content="文/一月筠 -- 转载请注明 --
@@ -184,7 +184,7 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" href="mailto:guo-yan-jun@qq.com" title="Email"></a>
+                                <a class="fa Email" href="mailto:guoyanjun.love@gmail.com" title="Email"></a>
                             
                                 <a class="fa 新浪微博" href="http://weibo.com/1778140743" title="新浪微博"></a>
                             
@@ -276,7 +276,7 @@
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" target="_blank" href="mailto:guo-yan-jun@qq.com" title="Email"></a>
+                                <a class="fa Email" target="_blank" href="mailto:guoyanjun.love@gmail.com" title="Email"></a>
                             
                                 <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1778140743" title="新浪微博"></a>
                             
@@ -301,15 +301,6 @@
       <time datetime="2017-02-20T06:35:00.000Z" itemprop="datePublished">2017-02-20</time>
 </a>
 
- 
-    <a href="/2017/02/20/analysis-of-ios-loading-single-image-leading-to-colapse.html#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-            <span class="ds-thread-count" ></span>
-        
-        
-    </a>
 
     </div>
   
@@ -372,9 +363,11 @@
 <p>而在iOS系统里面释放图像的内存是一件比较麻烦的事情，有可能会造成内存泄漏。</p>
 <p><strong>例如：</strong>当一个UIView对象的animationImages是一个装有UIImage对象动态数组NSMutableArray，并进行逐帧动画。当使用imageNamed的方式加载图像到一个动态数组NSMutableArray，这将会很有可能造成内存泄露，原因很显然的。</p>
 <p><code>imageWithContentsOfFile：仅加载图片，图像数据不会缓存。</code></p>
-<p><strong>因此对于较大的图片以及使用情况较少时，那就可以用该方法，降低内存消耗。</strong><br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="string">//下面列举出两种方法加载UIImage的用法：</span></div><div class="line"><span class="string">NSString</span> <span class="meta">*path</span> <span class="string">=</span> <span class="string">[[NSBundle</span> <span class="string">mainBundle]</span> <span class="attr">pathForResource:@”icon”</span> <span class="attr">ofType:@”png”];</span></div><div class="line"><span class="string">UIImage</span> <span class="meta">*image</span> <span class="string">=</span> <span class="string">[UIImage</span> <span class="attr">imageWithContentsOfFile:path];</span></div><div class="line"></div><div class="line"><span class="string">NSString</span> <span class="meta">*filePath</span> <span class="string">=</span> <span class="string">[[NSBundle</span> <span class="string">mainBundle]</span> <span class="attr">pathForResource:fileName</span> <span class="attr">ofType:“png”];</span></div><div class="line"><span class="string">NSData</span> <span class="meta">*image</span> <span class="string">=</span> <span class="string">[NSData</span> <span class="attr">dataWithContentsOfFile:filePath];</span></div><div class="line"><span class="string">UIImage</span> <span class="meta">*image</span> <span class="string">=</span> <span class="string">[UIImage</span> <span class="attr">imageWithData:image];</span> <span class="string">//or</span> <span class="string">=</span> <span class="string">[UIImage</span> <span class="attr">imageWithContentsOfFile:filePath];</span></div></pre></td></tr></table></figure></p>
-<p>相比较而言，这其中的关键在于以下：<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//imageWithContentsOfFile：仅加载图片，图像数据不会缓存</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//imageNamed:先将图片缓存到内存中，然后在显示。</span></div></pre></td></tr></table></figure>
+<p><strong>因此对于较大的图片以及使用情况较少时，那就可以用该方法，降低内存消耗。</strong></p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//下面列举出两种方法加载UIImage的用法：</span></div><div class="line"><span class="built_in">NSString</span> *path = [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:@”icon” ofType:@”png”];</div><div class="line"><span class="built_in">UIImage</span> *image = [<span class="built_in">UIImage</span> imageWithContentsOfFile:path];</div><div class="line"></div><div class="line"><span class="built_in">NSString</span> *filePath = [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:fileName ofType:“png”];</div><div class="line"><span class="built_in">NSData</span> *image = [<span class="built_in">NSData</span> dataWithContentsOfFile:filePath];</div><div class="line"><span class="built_in">UIImage</span> *image = [<span class="built_in">UIImage</span> imageWithData:image]; <span class="comment">//or = [UIImage imageWithContentsOfFile:filePath];</span></div></pre></td></tr></table></figure>
+<p>相比较而言，这其中的关键在于以下：</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//imageWithContentsOfFile：仅加载图片，图像数据不会缓存</span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//imageNamed:先将图片缓存到内存中，然后在显示。</span></div></pre></td></tr></table></figure>
 <p>最后，再次强调两种用法各有各的优点，需要针对具体的应用场景来使用才能恰到好处。</p>
 
       
@@ -387,7 +380,7 @@
         <p><span>本文标题:</span><a href="/2017/02/20/analysis-of-ios-loading-single-image-leading-to-colapse.html">iOS加载单张图片导致崩溃的分析</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">一月筠</a></p>
         <p><span>发布时间:</span>2017-02-20, 14:35:00</p>
-        <p><span>最后更新:</span>2017-03-29, 18:33:11</p>
+        <p><span>最后更新:</span>2017-03-30, 17:03:28</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/02/20/analysis-of-ios-loading-single-image-leading-to-colapse.html" title="iOS加载单张图片导致崩溃的分析">http://blog.guoyanjun.top/2017/02/20/analysis-of-ios-loading-single-image-leading-to-colapse.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.guoyanjun.top/2017/02/20/analysis-of-ios-loading-single-image-leading-to-colapse.html　　作者: 一月筠" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -503,61 +496,16 @@
 
 
     
-      <div class="duoshuo" id="comments">
-    <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2017/02/20/analysis-of-ios-loading-single-image-leading-to-colapse.html" data-title="iOS加载单张图片导致崩溃的分析" data-url="http://blog.guoyanjun.top/2017/02/20/analysis-of-ios-loading-single-image-leading-to-colapse.html"></div>
-    <script>
-        var duoshuoQuery = {short_name:"null"};
-        var loadComment = function(){
-            var d = document, s = d.createElement('script');
-            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            s.async = true; s.charset = 'UTF-8';
-            (d.head || d.body).appendChild(s);
-        }
-
-        
-            // Add comment count
-            $(function(){ 
-                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=null&threads=2017/02/20/analysis-of-ios-loading-single-image-leading-to-colapse.html&callback=?";
-                $.getJSON(jsonUrl, function(result){
-                    $.each(result.response, function(i, field){
-                        var value = field.comments;
-                        if (value > 0) {
-                            $(".count-comment").text(value);
-                            return;
-                        }
-                    })
-                })
-            })
-        
-    </script>
-    
-    <aside class="comment-bar">
-        <a href="javascript:void(0);">
-            <i class="fa fa-commenting-o animated infinite pulse"></i>
-            <i class="fa fa-spinner fa-pulse"></i>
-            <span class="count-comment"></span>
-        </a>
-    </aside>
-    <script>
-        var $commentBar = $("#comments aside.comment-bar");
-        var load$hide = function(){
-            $commentBar.find("a > i").toggle();
-            loadComment();
-            $commentBar.fadeOut(800);
-        }
-        $commentBar.click(function(){
-            load$hide();
-        })
-        $commentBar.children("a").hover(function(){
-            load$hide();
-        })
-        if (window.location.hash === "#comments") {
-            load$hide();
-        }
-    </script>
-
-</div>
+        <div class="changyan" id="comments">
+<!--高速版，加载速度快，使用前需测试页面的兼容性-->
+<div id="SOHUCS" sid="iOS加载单张图片导致崩溃的分析"></div>
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cysVaUJeL'; 
+var conf = 'prod_46b92ad4f9996bb0f4fa145a39533f50'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
     
 
 

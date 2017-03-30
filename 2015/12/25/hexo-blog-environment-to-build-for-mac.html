@@ -16,23 +16,27 @@
 
 
 <meta name="description" content="文/一月筠 -- 转载请注明 --
-本片文章针对Mac用户，熟悉hexo的同学可以绕道哈。初步搭建只需要简单的几步，动动你的手指头，在终端试一下吧…">
+hexo是一款基于Node.js的静态博客框架，这篇文章针对Mac用户，熟悉hexo的同学可以绕道哈。初步搭建只需要简单的几步，动动你的手指头，在终端试一下吧…">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo博客环境搭建for Mac">
 <meta property="og:url" content="http://blog.guoyanjun.top/2015/12/25/hexo-blog-environment-to-build-for-mac.html">
 <meta property="og:site_name" content="郭艳军的那些事儿">
 <meta property="og:description" content="文/一月筠 -- 转载请注明 --
-本片文章针对Mac用户，熟悉hexo的同学可以绕道哈。初步搭建只需要简单的几步，动动你的手指头，在终端试一下吧…">
+hexo是一款基于Node.js的静态博客框架，这篇文章针对Mac用户，熟悉hexo的同学可以绕道哈。初步搭建只需要简单的几步，动动你的手指头，在终端试一下吧…">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/424375-576aa8f4ad60d4b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/424375-35f1aba8b42014ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/424375-8969211745db3d6c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/424375-9b378981416d271b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/424375-1a32992b4eac9cce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg">
-<meta property="og:updated_time" content="2017-03-29T10:33:09.000Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1712159-102fc641972e4cf3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1712159-efd0f7a036164831.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1712159-173750b1a4a73d95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1712159-0419298696b76bc3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-03-30T09:03:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客环境搭建for Mac">
 <meta name="twitter:description" content="文/一月筠 -- 转载请注明 --
-本片文章针对Mac用户，熟悉hexo的同学可以绕道哈。初步搭建只需要简单的几步，动动你的手指头，在终端试一下吧…">
+hexo是一款基于Node.js的静态博客框架，这篇文章针对Mac用户，熟悉hexo的同学可以绕道哈。初步搭建只需要简单的几步，动动你的手指头，在终端试一下吧…">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/424375-576aa8f4ad60d4b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -190,7 +194,7 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" href="mailto:guo-yan-jun@qq.com" title="Email"></a>
+                                <a class="fa Email" href="mailto:guoyanjun.love@gmail.com" title="Email"></a>
                             
                                 <a class="fa 新浪微博" href="http://weibo.com/1778140743" title="新浪微博"></a>
                             
@@ -282,7 +286,7 @@
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" target="_blank" href="mailto:guo-yan-jun@qq.com" title="Email"></a>
+                                <a class="fa Email" target="_blank" href="mailto:guoyanjun.love@gmail.com" title="Email"></a>
                             
                                 <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1778140743" title="新浪微博"></a>
                             
@@ -307,15 +311,6 @@
       <time datetime="2015-12-25T10:00:00.000Z" itemprop="datePublished">2015-12-25</time>
 </a>
 
- 
-    <a href="/2015/12/25/hexo-blog-environment-to-build-for-mac.html#comments" title="查看评论">
-        <i class="fa fa-comments-o" aria-hidden="true"></i>
-        <span class="count-comment"></span>
-        
-            <span class="ds-thread-count" ></span>
-        
-        
-    </a>
 
     </div>
   
@@ -355,41 +350,137 @@
           
         <script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><ul>
 <li><strong>文/一月筠</strong> <strong><code>-- 转载请注明 --</code></strong></li>
-<li>本片文章针对Mac用户，熟悉hexo的同学可以绕道哈。初步搭建只需要简单的几步，动动你的手指头，在终端试一下吧…<a id="more"></a>
+<li><a href="https://github.com/hexojs/hexo" target="_blank" rel="external">hexo</a>是一款基于Node.js的静态博客框架，这篇文章针对Mac用户，熟悉hexo的同学可以绕道哈。初步搭建只需要简单的几步，动动你的手指头，在终端试一下吧…<a id="more"></a>
 </li>
 </ul>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><a href="https://github.com/hexojs/hexo" target="_blank" rel="external">hexo</a>是一款基于Node.js的静态博客框架，这篇文章针对Mac用户，熟悉hexo的同学可以绕道哈。初步搭建只需要简单的几步，动动你的手指头，在终端试一下吧…</p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
 <li><a href="#了解GithubPages">了解Github Pages</a></li>
 <li><a href="#搭建环境">搭建环境</a></li>
+<li><a href="#Git安装和Github设置">Git安装和Github设置</a></li>
+<li><a href="#Node.js安装">Node.js安装</a></li>
+<li><a href="#Hexo安装">Hexo安装</a></li>
+<li><a href="#Hexo本地部署">Hexo本地部署</a></li>
+<li><a href="#相关错误及解决方法">相关错误及解决方法</a></li>
+<li><a href="#配置SSH密钥">配置SSH密钥</a></li>
+<li><a href="#Extensions">Extensions</a></li>
 </ul>
 <h3 id="了解Github-Pages"><a href="#了解Github-Pages" class="headerlink" title="了解Github Pages"></a><a name="了解GithubPages">了解Github Pages</a></h3><p>关于Github Pages请移步我的另一篇博客</p>
 <h3 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a><a name="搭建环境">搭建环境</a></h3><p>本文只针对Mac用户，windows用户以及Linux用户可自行Google。在Mac上，推荐先安装homebrew。homebrew是Mac OS上的软件包管理工具。</p>
 <p> <img src="http://upload-images.jianshu.io/upload_images/424375-576aa8f4ad60d4b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg" alt="Homebrew 安装"></p>
-<h3 id="Git安装和Github设置"><a href="#Git安装和Github设置" class="headerlink" title="Git安装和Github设置"></a>Git安装和Github设置</h3><ul>
+<h3 id="Git安装和Github设置"><a href="#Git安装和Github设置" class="headerlink" title="Git安装和Github设置"></a><a name="Git安装和Github设置">Git安装和Github设置</a></h3><ul>
 <li>使用homebrew安装git<code>brew install git</code></li>
 <li>查看git是否已安装成功<code>git --version</code></li>
 <li>确认Github上已经创建名为<code>“你的用户名.github.io”</code>的仓库</li>
 </ul>
-<h3 id="Node-js安装"><a href="#Node-js安装" class="headerlink" title="Node.js安装"></a>Node.js安装</h3><ul>
+<h3 id="Node-js安装"><a href="#Node-js安装" class="headerlink" title="Node.js安装"></a><a name="Node.js安装">Node.js安装</a></h3><blockquote>
+<p>快速安装</p>
+</blockquote>
+<ul>
 <li>使用homebrew安装node<code>brew install node</code></li>
 <li>node.js的包中已经集成了npm，npm是Node.js的模块依赖管理工具</li>
 <li>查看node和npm是否已安装成功<code>node -v</code>和<code>npm -v</code></li>
 </ul>
-<h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h3><p><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a>是一个基于Node.js的静态博客框架，作者是@tommy351</p>
+<blockquote>
+<p>官网安装</p>
+</blockquote>
+<p>本站使用的是在<a href="https://nodejs.org/en/" target="_blank" rel="external">node官网</a>下的<code>Node.js</code>的pkg安装包进行的安装，安装的版本为<code>v6.10.0</code>，可能现在的版本已经升级。可以通过查看历史版本进行下载。附上链接地址：<a href="https://nodejs.org/download/release/v6.10.0/" target="_blank" rel="external">https://nodejs.org/download/release/v6.10.0/</a></p>
+<h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a><a name="Hexo安装">Hexo安装</a></h3><p><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a>是一个基于Node.js的静态博客框架，作者是@tommy351</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/424375-35f1aba8b42014ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg" alt="Hexo官网"></p>
 <ul>
-<li>cd到你在本地的博客文件夹，然后执行下面的安装命令</li>
+<li>cd到你在本地的博客文件夹<code>cd /users/GuoYanjun/Documents/tinyjay_blog</code>，然后执行下面的安装命令</li>
 </ul>
 <p><code>npm install hexo-cli -g</code></p>
-<h3 id="Hexo本地部署"><a href="#Hexo本地部署" class="headerlink" title="Hexo本地部署"></a>Hexo本地部署</h3><ul>
+<h3 id="Hexo本地部署"><a href="#Hexo本地部署" class="headerlink" title="Hexo本地部署"></a><a name="Hexo本地部署">Hexo本地部署</a></h3><ul>
 <li>cd到你在本地的博客文件夹，然后执行下面的命令</li>
 </ul>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cd <span class="regexp">/users/</span>jason_yuan<span class="regexp">/Desktop/my</span>_blog_folder</div><div class="line">hexo init                  <span class="comment">#执行init命令初始化hexo到当前目录</span></div><div class="line">hexo new post <span class="string">"post_name"</span>  <span class="comment"># 新建一篇文章</span></div><div class="line">hexo g                     <span class="comment"># g == generate 自动根据当前目录下文件,生成静态网页</span></div><div class="line">hexo s                     <span class="comment"># s == server 运行本地服务</span></div></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cd <span class="regexp">/users/</span>GuoYanjun<span class="regexp">/Documents/</span>tinyjay_blog</div><div class="line">hexo init                  <span class="comment">#执行init命令初始化hexo到当前目录</span></div><div class="line">hexo new post <span class="string">"post_name"</span>  <span class="comment"># 新建一篇文章</span></div><div class="line">hexo g                     <span class="comment"># g == generate 自动根据当前目录下文件,生成静态网页</span></div><div class="line">hexo s                     <span class="comment"># s == server 运行本地服务</span></div></pre></td></tr></table></figure>
+<ul>
+<li>部署步骤</li>
+</ul>
+<p>每次部署的步骤，可按以下三步来进行。</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo <span class="keyword">generate</span></div><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+<p><strong>这里有必要提下Hexo常用的几个命令:</strong></p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">generate</span>       #自动根据当前目录下文件,生成静态网页,会在当前目录下生成一个public的文件夹</div><div class="line">hexo server         #启动本地web服务，预览访问（默认端口<span class="number">4000</span>，'ctrl + c'关闭server）</div><div class="line">hexo deploy         #部署播客到远端（比如github, coding等平台）</div></pre></td></tr></table></figure>
+<p><strong>常用命令</strong></p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>hexo new <span class="string">"postName"</span>         <span class="comment">#新建文章,其中postName是文章题目</span></div><div class="line"><span class="variable">$ </span>hexo new page <span class="string">"pageName"</span>    <span class="comment">#新建页面</span></div><div class="line"><span class="variable">$ </span>hexo help                   <span class="comment">#查看帮助</span></div><div class="line"><span class="variable">$ </span>hexo version                <span class="comment">#查看Hexo的版本</span></div><div class="line"><span class="variable">$ </span>hexo clean                  <span class="comment">#清除缓存 网页正常情况下可以忽略此条命令</span></div></pre></td></tr></table></figure>
+<p><strong>常用简写</strong></p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>hexo n <span class="string">"我的博客"</span> == hexo new <span class="string">"我的博客"</span> <span class="comment">#新建文章</span></div><div class="line"><span class="variable">$ </span>hexo p == hexo publish</div><div class="line"><span class="variable">$ </span>hexo g == hexo generate					<span class="comment">#生成</span></div><div class="line"><span class="variable">$ </span>hexo s == hexo server						<span class="comment">#启动服务预览</span></div><div class="line"><span class="variable">$ </span>hexo d == hexo deploy						<span class="comment">#部署</span></div></pre></td></tr></table></figure>
+<p><strong>常用组合</strong></p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>hexo d -g <span class="comment">#生成部署</span></div><div class="line"><span class="variable">$ </span>hexo s -g <span class="comment">#生成预览</span></div></pre></td></tr></table></figure>
+<p><strong>服务器</strong></p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ hexo <span class="keyword">server</span> <span class="meta">#Hexo 会监视文件变动并自动更新，您无须重启服务器。 </span></div><div class="line">$ hexo <span class="keyword">server</span> -s <span class="meta">#静态模式 </span></div><div class="line">$ hexo <span class="keyword">server</span> -p <span class="number">5000</span> <span class="meta">#更改端口 </span></div><div class="line">$ hexo <span class="keyword">server</span> -i <span class="number">192.168</span><span class="number">.1</span><span class="number">.1</span> <span class="meta">#自定义 IP</span></div></pre></td></tr></table></figure>
+<p><strong>监视文件变动</strong></p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">generate</span>				#生成静态文件 </div><div class="line">hexo <span class="keyword">generate</span> --watch	#监视文件变动</div></pre></td></tr></table></figure>
+<p>以下为上述部署步骤的相关截图。</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/424375-8969211745db3d6c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg" alt="hexo init 之后出现的文件夹"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/424375-9b378981416d271b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg" alt="npm install 之后出现 node_modules"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/424375-1a32992b4eac9cce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240/format/jpg" alt="hexo generate 之后出现 public 和 db.json"></p>
 <ul>
 <li>最后，可以在本地查看<code>localhost:4000</code><br>在Mac terminal按下<code>ctrl+C</code>结束</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1712159-102fc641972e4cf3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="运行效果图"></p>
+<h3 id="相关错误及解决方法"><a href="#相关错误及解决方法" class="headerlink" title="相关错误及解决方法"></a><a name="相关错误及解决方法">相关错误及解决方法</a></h3><ul>
+<li>出现类似<code>Error: Module version mismatch. Expected 48, got 51.</code>的错误</li>
+</ul>
+<p>如果终端出现类似上述的错误，可能是因为你的<code>node.js</code>版本与之前项目的版本不一致造成的。可以移除之前的<code>node.js</code>，按照之前的版本重新安装<code>node.js</code>.</p>
+<p><strong>step1: node.js在Mac下的卸载</strong></p>
+<p>在 node 官网上下载的安装包，用安装包安装的node.应该可以用一下命令行卸载：</p>
+<p>在终端输入以下命令：</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo rm -rf /usr/local/&#123;bin/&#123;<span class="keyword">node</span><span class="title">,npm</span>&#125;,lib/node_modules/npm,lib/<span class="keyword">node</span><span class="title">,share</span>/man/*/<span class="keyword">node</span>.<span class="title">*&#125;</span></div></pre></td></tr></table></figure>
+<p>删除<code>/usr/local/lib</code>中的所有<code>node</code>和<code>node_modules</code><br>删除<code>/usr/local/lib</code>中的所有<code>node</code>和<code>node_modules</code>的文件夹<br>如果是从<code>brew</code>安装的, 运行<code>brew uninstall node</code><br>检查<code>~/</code>中所有的<code>local</code>, <code>lib</code>或者<code>include</code>文件夹, 删除里面所有<code>node</code>和<code>node_modules</code><br>在<code>/usr/local/bin</code>中, 删除所有node的可执行文件<br>最后运行以下代码:(可能具体安装路径会有区别 ,<code>find ~ -name &quot;node&quot;</code>可以找到所有</p>
+<p><strong>step2: hexo在Mac下的移除</strong></p>
+<p>接着移除<code>hexo</code>，移除的命令请参照以下：</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">npm</span> uninstall hexo-cli -g <span class="comment">#3.0.0版本执行</span></div><div class="line"><span class="built_in">npm</span> uninstall hexo -g <span class="comment">#之前版本执行</span></div></pre></td></tr></table></figure>
+<p><strong>step3: 重新install hexo</strong></p>
+<p>移除之后，在本地博客的文件夹中执行<code>npm install hexo-cli -g</code>命令即可。</p>
+<h3 id="配置SSH密钥"><a href="#配置SSH密钥" class="headerlink" title="配置SSH密钥"></a><a name="配置SSH密钥">配置SSH密钥</a></h3><ul>
+<li>Mac下已安装的ssh的id_rsa.pub文件位置</li>
+</ul>
+<p>如果之前生成的SSH Key是选择默认路径的，因此要找到ssh文件夹下的id_rsa.pub文件，只需要：<br>打开终端输入<code>open ~/.ssh</code>即可。</p>
+<h4 id="step1-看看是否存在SSH密钥-keys"><a href="#step1-看看是否存在SSH密钥-keys" class="headerlink" title="step1: 看看是否存在SSH密钥(keys)"></a>step1: 看看是否存在SSH密钥(keys)</h4><p>首先，我们需要看看是否看看本机是否存在SSH keys,打开Git Bash,并运行:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> ~/. ssh</div></pre></td></tr></table></figure>
+<p>检查你本机用户home目录下是否存在.ssh目录</p>
+<p>如果，不存在此目录，则进行第二步操作，否则，你本机已经存在ssh公钥和私钥，可以略过第二步，直接进入第三步操作。</p>
+<h4 id="step2-创建一对新的SSH密钥-keys"><a href="#step2-创建一对新的SSH密钥-keys" class="headerlink" title="step2: 创建一对新的SSH密钥(keys)"></a>step2: 创建一对新的SSH密钥(keys)</h4><ul>
+<li>按照你提供的邮箱地址，创建一对密钥</li>
+</ul>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ssh-keygen -t rsa -C <span class="string">"your_email@example.com"</span></div></pre></td></tr></table></figure>
+<p>运行完之后会出现以下提示：</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Generating <span class="keyword">public</span>/<span class="keyword">private</span> rsa <span class="keyword">key</span> pair.</div><div class="line">Enter file <span class="keyword">in</span> which <span class="keyword">to</span> save the <span class="keyword">key</span> (/Users/yourname/.ssh/id_rsa):</div></pre></td></tr></table></figure>
+<ul>
+<li><p>直接回车，则将密钥按默认文件进行存储。此时也可以输入特定的文件名，比如/Users/yourname/.ssh/github_rsa</p>
+</li>
+<li><p>接着，根据提示，你需要输入密码和确认密码（说到这里，如果你很放心，其实可以不用密码，就是到输密码的地方，都直接回车，所以每次push就只管回车就行了。所谓的最安全的密码，就是没有密码）。这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。<strong>注意：输入密码的时候没有*字样的，你直接输入就可以了。</strong></p>
+</li>
+</ul>
+<p>相关提示如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase): <span class="xml"><span class="tag">&lt;<span class="name">输入加密串</span>&gt;</span></span></div><div class="line">Enter same passphrase again: <span class="tag">&lt;<span class="name">再次输入加密串</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>输入完成之后，屏幕会显示如下信息：</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">Your identification has been saved in /Users/yourname/.ssh/id_rsa.</div><div class="line">Your public key has been saved in /Users/yourname/.ssh/id_rsa.pub.</div><div class="line">The key fingerprint is:</div><div class="line">SHA256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx your_email<span class="meta">@example.com</span></div><div class="line">The key's randomart image is:</div><div class="line">+---[RSA 2048]----+</div><div class="line">|<span class="string">                 </span>|</div><div class="line">|<span class="string">                 </span>|</div><div class="line">|<span class="string">                 </span>|</div><div class="line">|<span class="string">                 </span>|</div><div class="line">|<span class="string">                 </span>|</div><div class="line">|<span class="string">                 </span>|</div><div class="line">|<span class="string">                 </span>|</div><div class="line">|<span class="string">                 </span>|</div><div class="line">|<span class="string">                 </span>|</div><div class="line">+----[SHA256]-----+</div></pre></td></tr></table></figure>
+<h4 id="step3-在GitHub账户中添加你的公钥"><a href="#step3-在GitHub账户中添加你的公钥" class="headerlink" title="step3: 在GitHub账户中添加你的公钥"></a>step3: 在GitHub账户中添加你的公钥</h4><p>运行如下命令，从Finder中找到你的<code>id_rsa.pub</code>文件，打开之后，将其内容全部复制。看清楚是<strong>全部复制</strong>！！！</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> ~/. ssh</div></pre></td></tr></table></figure>
+<h4 id="step4-将密钥添加到你的GitHub账户中"><a href="#step4-将密钥添加到你的GitHub账户中" class="headerlink" title="step4: 将密钥添加到你的GitHub账户中"></a>step4: 将密钥添加到你的GitHub账户中</h4><ul>
+<li><p>step1: 登陆GitHub,进入你的Account Settings.<br><img src="http://upload-images.jianshu.io/upload_images/1712159-efd0f7a036164831.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Account Settings"></p>
+</li>
+<li><p>step2: 选择SSH Keys<br><img src="http://upload-images.jianshu.io/upload_images/1712159-173750b1a4a73d95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="SSH Keys"></p>
+</li>
+<li><p>step3: 粘贴密钥，添加即可<br><img src="http://upload-images.jianshu.io/upload_images/1712159-0419298696b76bc3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="粘贴密钥"></p>
+</li>
+</ul>
+<h4 id="step5-测试"><a href="#step5-测试" class="headerlink" title="step5: 测试"></a>step5: 测试</h4><p>添加完密钥后可以输入下面的命令，看看设置是否成功，git@github.com的部分不要修改：</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>ssh -T git<span class="variable">@github</span>.com</div></pre></td></tr></table></figure>
+<p>如果是下面的反馈：</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">The authenticity <span class="keyword">of</span> host <span class="comment">'github.com (207.97.227.239)' can't be established.</span></div><div class="line">RSA <span class="keyword">key</span> fingerprint <span class="keyword">is</span> <span class="number">16</span>:<span class="number">27</span>:ac:a5:<span class="number">76</span>:<span class="number">28</span>:<span class="number">2</span>d:<span class="number">36</span>:<span class="number">63</span>:<span class="number">1</span>b:<span class="number">56</span>:<span class="number">4</span>d:eb:df:a6:<span class="number">48.</span></div><div class="line">Are you sure you want <span class="keyword">to</span> <span class="keyword">continue</span> connecting (yes/no)?</div></pre></td></tr></table></figure>
+<p>不要紧张，输入yes就好，然后会看到：</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hi TinyJay! You<span class="symbol">'ve</span> successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell <span class="keyword">access</span>.</div></pre></td></tr></table></figure>
+<h4 id="step5-设置用户信息"><a href="#step5-设置用户信息" class="headerlink" title="step5: 设置用户信息"></a>step5: 设置用户信息</h4><p>现在你已经可以通过SSH链接到GitHub了，还有一些个人信息需要完善的。<br>Git会根据用户的名字和邮箱来记录提交。GitHub也是用这些信息来做权限的处理，输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的，名字必须是你的真名，而不是GitHub的昵称。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user<span class="selector-class">.name</span> <span class="string">"TinyJay"</span><span class="comment">//用户名</span></div><div class="line">$ git config --global user<span class="selector-class">.email</span>  <span class="string">"your_email@gmail.com"</span><span class="comment">//填写自己的邮箱</span></div></pre></td></tr></table></figure>
+<h3 id="Extensions"><a href="#Extensions" class="headerlink" title="Extensions"></a><a name="Extensions">Extensions</a></h3><ul>
+<li><p>Plugins: <a href="http://hexo.io/plugins/" target="_blank" rel="external">http://hexo.io/plugins/</a></p>
+</li>
+<li><p>Themes: <a href="http://hexo.io/themes/" target="_blank" rel="external">http://hexo.io/themes/</a></p>
+</li>
 </ul>
 
       
@@ -402,7 +493,7 @@
         <p><span>本文标题:</span><a href="/2015/12/25/hexo-blog-environment-to-build-for-mac.html">Hexo博客环境搭建for Mac</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">一月筠</a></p>
         <p><span>发布时间:</span>2015-12-25, 18:00:00</p>
-        <p><span>最后更新:</span>2017-03-29, 18:33:09</p>
+        <p><span>最后更新:</span>2017-03-30, 17:03:28</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2015/12/25/hexo-blog-environment-to-build-for-mac.html" title="Hexo博客环境搭建for Mac">http://blog.guoyanjun.top/2015/12/25/hexo-blog-environment-to-build-for-mac.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.guoyanjun.top/2015/12/25/hexo-blog-environment-to-build-for-mac.html　　作者: 一月筠" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -438,7 +529,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目录"><span class="toc-number">2.</span> <span class="toc-text">目录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#了解Github-Pages"><span class="toc-number">2.1.</span> <span class="toc-text">了解Github Pages</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搭建环境"><span class="toc-number">2.2.</span> <span class="toc-text">搭建环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git安装和Github设置"><span class="toc-number">2.3.</span> <span class="toc-text">Git安装和Github设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-js安装"><span class="toc-number">2.4.</span> <span class="toc-text">Node.js安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo安装"><span class="toc-number">2.5.</span> <span class="toc-text">Hexo安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo本地部署"><span class="toc-number">2.6.</span> <span class="toc-text">Hexo本地部署</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目录"><span class="toc-number">2.</span> <span class="toc-text">目录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#了解Github-Pages"><span class="toc-number">2.1.</span> <span class="toc-text">了解Github Pages</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#搭建环境"><span class="toc-number">2.2.</span> <span class="toc-text">搭建环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git安装和Github设置"><span class="toc-number">2.3.</span> <span class="toc-text">Git安装和Github设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-js安装"><span class="toc-number">2.4.</span> <span class="toc-text">Node.js安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo安装"><span class="toc-number">2.5.</span> <span class="toc-text">Hexo安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo本地部署"><span class="toc-number">2.6.</span> <span class="toc-text">Hexo本地部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关错误及解决方法"><span class="toc-number">2.7.</span> <span class="toc-text">相关错误及解决方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置SSH密钥"><span class="toc-number">2.8.</span> <span class="toc-text">配置SSH密钥</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#step1-看看是否存在SSH密钥-keys"><span class="toc-number">2.8.1.</span> <span class="toc-text">step1: 看看是否存在SSH密钥(keys)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#step2-创建一对新的SSH密钥-keys"><span class="toc-number">2.8.2.</span> <span class="toc-text">step2: 创建一对新的SSH密钥(keys)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#step3-在GitHub账户中添加你的公钥"><span class="toc-number">2.8.3.</span> <span class="toc-text">step3: 在GitHub账户中添加你的公钥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#step4-将密钥添加到你的GitHub账户中"><span class="toc-number">2.8.4.</span> <span class="toc-text">step4: 将密钥添加到你的GitHub账户中</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#step5-测试"><span class="toc-number">2.8.5.</span> <span class="toc-text">step5: 测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#step5-设置用户信息"><span class="toc-number">2.8.6.</span> <span class="toc-text">step5: 设置用户信息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Extensions"><span class="toc-number">2.9.</span> <span class="toc-text">Extensions</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -518,61 +609,16 @@
 
 
     
-      <div class="duoshuo" id="comments">
-    <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2015/12/25/hexo-blog-environment-to-build-for-mac.html" data-title="Hexo博客环境搭建for Mac" data-url="http://blog.guoyanjun.top/2015/12/25/hexo-blog-environment-to-build-for-mac.html"></div>
-    <script>
-        var duoshuoQuery = {short_name:"null"};
-        var loadComment = function(){
-            var d = document, s = d.createElement('script');
-            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-            s.async = true; s.charset = 'UTF-8';
-            (d.head || d.body).appendChild(s);
-        }
-
-        
-            // Add comment count
-            $(function(){ 
-                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=null&threads=2015/12/25/hexo-blog-environment-to-build-for-mac.html&callback=?";
-                $.getJSON(jsonUrl, function(result){
-                    $.each(result.response, function(i, field){
-                        var value = field.comments;
-                        if (value > 0) {
-                            $(".count-comment").text(value);
-                            return;
-                        }
-                    })
-                })
-            })
-        
-    </script>
-    
-    <aside class="comment-bar">
-        <a href="javascript:void(0);">
-            <i class="fa fa-commenting-o animated infinite pulse"></i>
-            <i class="fa fa-spinner fa-pulse"></i>
-            <span class="count-comment"></span>
-        </a>
-    </aside>
-    <script>
-        var $commentBar = $("#comments aside.comment-bar");
-        var load$hide = function(){
-            $commentBar.find("a > i").toggle();
-            loadComment();
-            $commentBar.fadeOut(800);
-        }
-        $commentBar.click(function(){
-            load$hide();
-        })
-        $commentBar.children("a").hover(function(){
-            load$hide();
-        })
-        if (window.location.hash === "#comments") {
-            load$hide();
-        }
-    </script>
-
-</div>
+        <div class="changyan" id="comments">
+<!--高速版，加载速度快，使用前需测试页面的兼容性-->
+<div id="SOHUCS" sid="Hexo博客环境搭建for Mac"></div>
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cysVaUJeL'; 
+var conf = 'prod_46b92ad4f9996bb0f4fa145a39533f50'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
     
 
 
