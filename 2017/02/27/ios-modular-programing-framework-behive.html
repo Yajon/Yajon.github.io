@@ -27,7 +27,7 @@ BeeHive是用于iOS的app模块化编程的框架实现方案，吸收了Spring�
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-e79675eb29ead910.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-cdfab37ea4262d81.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1819713-f28d3dd95dd79ec7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-03-30T09:03:28.000Z">
+<meta property="og:updated_time" content="2017-03-30T10:14:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS 模块化编程框架 BeeHive">
 <meta name="twitter:description" content="文/一月筠 -- 转载请注明 --
@@ -450,7 +450,7 @@ BeeHive是用于iOS的app模块化编程的框架实现方案，吸收了Spring�
         <p><span>本文标题:</span><a href="/2017/02/27/ios-modular-programing-framework-behive.html">iOS 模块化编程框架 BeeHive</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">一月筠</a></p>
         <p><span>发布时间:</span>2017-02-27, 18:13:00</p>
-        <p><span>最后更新:</span>2017-03-30, 17:03:28</p>
+        <p><span>最后更新:</span>2017-03-30, 18:14:59</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/02/27/ios-modular-programing-framework-behive.html" title="iOS 模块化编程框架 BeeHive">http://blog.guoyanjun.top/2017/02/27/ios-modular-programing-framework-behive.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.guoyanjun.top/2017/02/27/ios-modular-programing-framework-behive.html　　作者: 一月筠" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -566,16 +566,42 @@ BeeHive是用于iOS的app模块化编程的框架实现方案，吸收了Spring�
 
 
     
-        <div class="changyan" id="comments">
-<!--高速版，加载速度快，使用前需测试页面的兼容性-->
-<div id="SOHUCS" sid="iOS 模块化编程框架 BeeHive"></div>
-<script type="text/javascript"> 
-(function(){ 
-var appid = 'cysVaUJeL'; 
-var conf = 'prod_46b92ad4f9996bb0f4fa145a39533f50'; 
-var width = window.innerWidth || document.documentElement.clientWidth; 
-if (width < 960) { 
-window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+        <section class="youyan" id="comments">
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2129366';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+    <div id="uyan_frame"></div>
+</section>
     
 
 

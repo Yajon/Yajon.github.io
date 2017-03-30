@@ -32,7 +32,7 @@ hexo是一款基于Node.js的静态博客框架，这篇文章针对Mac用户，
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1712159-efd0f7a036164831.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1712159-173750b1a4a73d95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1712159-0419298696b76bc3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-03-30T09:03:28.000Z">
+<meta property="og:updated_time" content="2017-03-30T10:14:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客环境搭建for Mac">
 <meta name="twitter:description" content="文/一月筠 -- 转载请注明 --
@@ -449,10 +449,8 @@ hexo是一款基于Node.js的静态博客框架，这篇文章针对Mac用户，
 <p>运行完之后会出现以下提示：</p>
 <figure class="highlight vbnet"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Generating <span class="keyword">public</span>/<span class="keyword">private</span> rsa <span class="keyword">key</span> pair.</div><div class="line">Enter file <span class="keyword">in</span> which <span class="keyword">to</span> save the <span class="keyword">key</span> (/Users/yourname/.ssh/id_rsa):</div></pre></td></tr></table></figure>
 <ul>
-<li><p>直接回车，则将密钥按默认文件进行存储。此时也可以输入特定的文件名，比如/Users/yourname/.ssh/github_rsa</p>
-</li>
-<li><p>接着，根据提示，你需要输入密码和确认密码（说到这里，如果你很放心，其实可以不用密码，就是到输密码的地方，都直接回车，所以每次push就只管回车就行了。所谓的最安全的密码，就是没有密码）。这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。<strong>注意：输入密码的时候没有*字样的，你直接输入就可以了。</strong></p>
-</li>
+<li>直接回车，则将密钥按默认文件进行存储。此时也可以输入特定的文件名，比如/Users/yourname/.ssh/github_rsa</li>
+<li>接着，根据提示，你需要输入密码和确认密码（说到这里，如果你很放心，其实可以不用密码，就是到输密码的地方，都直接回车，所以每次push就只管回车就行了。所谓的最安全的密码，就是没有密码）。这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。<strong>注意：输入密码的时候没有*字样的，你直接输入就可以了。</strong></li>
 </ul>
 <p>相关提示如下：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase): <span class="xml"><span class="tag">&lt;<span class="name">输入加密串</span>&gt;</span></span></div><div class="line">Enter same passphrase again: <span class="tag">&lt;<span class="name">再次输入加密串</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -461,13 +459,11 @@ hexo是一款基于Node.js的静态博客框架，这篇文章针对Mac用户，
 <h4 id="step3-在GitHub账户中添加你的公钥"><a href="#step3-在GitHub账户中添加你的公钥" class="headerlink" title="step3: 在GitHub账户中添加你的公钥"></a>step3: 在GitHub账户中添加你的公钥</h4><p>运行如下命令，从Finder中找到你的<code>id_rsa.pub</code>文件，打开之后，将其内容全部复制。看清楚是<strong>全部复制</strong>！！！</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> ~/. ssh</div></pre></td></tr></table></figure>
 <h4 id="step4-将密钥添加到你的GitHub账户中"><a href="#step4-将密钥添加到你的GitHub账户中" class="headerlink" title="step4: 将密钥添加到你的GitHub账户中"></a>step4: 将密钥添加到你的GitHub账户中</h4><ul>
-<li><p>step1: 登陆GitHub,进入你的Account Settings.<br><img src="http://upload-images.jianshu.io/upload_images/1712159-efd0f7a036164831.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Account Settings"></p>
-</li>
-<li><p>step2: 选择SSH Keys<br><img src="http://upload-images.jianshu.io/upload_images/1712159-173750b1a4a73d95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="SSH Keys"></p>
-</li>
-<li><p>step3: 粘贴密钥，添加即可<br><img src="http://upload-images.jianshu.io/upload_images/1712159-0419298696b76bc3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="粘贴密钥"></p>
-</li>
+<li>step1: 登陆GitHub,进入你的Account Settings.<br><img src="http://upload-images.jianshu.io/upload_images/1712159-efd0f7a036164831.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Account Settings"></li>
+<li>step2: 选择SSH Keys<br><img src="http://upload-images.jianshu.io/upload_images/1712159-173750b1a4a73d95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="SSH Keys"></li>
+<li>step3: 粘贴密钥，添加即可</li>
 </ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/1712159-0419298696b76bc3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="粘贴密钥"></p>
 <h4 id="step5-测试"><a href="#step5-测试" class="headerlink" title="step5: 测试"></a>step5: 测试</h4><p>添加完密钥后可以输入下面的命令，看看设置是否成功，git@github.com的部分不要修改：</p>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>ssh -T git<span class="variable">@github</span>.com</div></pre></td></tr></table></figure>
 <p>如果是下面的反馈：</p>
@@ -477,10 +473,8 @@ hexo是一款基于Node.js的静态博客框架，这篇文章针对Mac用户，
 <h4 id="step5-设置用户信息"><a href="#step5-设置用户信息" class="headerlink" title="step5: 设置用户信息"></a>step5: 设置用户信息</h4><p>现在你已经可以通过SSH链接到GitHub了，还有一些个人信息需要完善的。<br>Git会根据用户的名字和邮箱来记录提交。GitHub也是用这些信息来做权限的处理，输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的，名字必须是你的真名，而不是GitHub的昵称。</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user<span class="selector-class">.name</span> <span class="string">"TinyJay"</span><span class="comment">//用户名</span></div><div class="line">$ git config --global user<span class="selector-class">.email</span>  <span class="string">"your_email@gmail.com"</span><span class="comment">//填写自己的邮箱</span></div></pre></td></tr></table></figure>
 <h3 id="Extensions"><a href="#Extensions" class="headerlink" title="Extensions"></a><a name="Extensions">Extensions</a></h3><ul>
-<li><p>Plugins: <a href="http://hexo.io/plugins/" target="_blank" rel="external">http://hexo.io/plugins/</a></p>
-</li>
-<li><p>Themes: <a href="http://hexo.io/themes/" target="_blank" rel="external">http://hexo.io/themes/</a></p>
-</li>
+<li>Plugins: <a href="http://hexo.io/plugins/" target="_blank" rel="external">http://hexo.io/plugins/</a></li>
+<li>Themes: <a href="http://hexo.io/themes/" target="_blank" rel="external">http://hexo.io/themes/</a></li>
 </ul>
 
       
@@ -493,7 +487,7 @@ hexo是一款基于Node.js的静态博客框架，这篇文章针对Mac用户，
         <p><span>本文标题:</span><a href="/2015/12/25/hexo-blog-environment-to-build-for-mac.html">Hexo博客环境搭建for Mac</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">一月筠</a></p>
         <p><span>发布时间:</span>2015-12-25, 18:00:00</p>
-        <p><span>最后更新:</span>2017-03-30, 17:03:28</p>
+        <p><span>最后更新:</span>2017-03-30, 18:14:59</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2015/12/25/hexo-blog-environment-to-build-for-mac.html" title="Hexo博客环境搭建for Mac">http://blog.guoyanjun.top/2015/12/25/hexo-blog-environment-to-build-for-mac.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://blog.guoyanjun.top/2015/12/25/hexo-blog-environment-to-build-for-mac.html　　作者: 一月筠" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -609,16 +603,42 @@ hexo是一款基于Node.js的静态博客框架，这篇文章针对Mac用户，
 
 
     
-        <div class="changyan" id="comments">
-<!--高速版，加载速度快，使用前需测试页面的兼容性-->
-<div id="SOHUCS" sid="Hexo博客环境搭建for Mac"></div>
-<script type="text/javascript"> 
-(function(){ 
-var appid = 'cysVaUJeL'; 
-var conf = 'prod_46b92ad4f9996bb0f4fa145a39533f50'; 
-var width = window.innerWidth || document.documentElement.clientWidth; 
-if (width < 960) { 
-window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+        <section class="youyan" id="comments">
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2129366';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+    <div id="uyan_frame"></div>
+</section>
     
 
 
