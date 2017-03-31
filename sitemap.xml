@@ -2,23 +2,113 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <sitemap>
-        <loc>http://blog.guoyanjun.top/post-sitemap.xml</loc>
-        <lastmod>2017-03-30T10:14:59.000Z</lastmod>
+        <loc>http://guoyanjun.top/blog/post-sitemap.xml</loc>
+        <lastmod>2017-03-29T05:16:01.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://blog.guoyanjun.top/page-sitemap.xml</loc>
+        <loc>http://guoyanjun.top/blog/page-sitemap.xml</loc>
         <lastmod>2017-03-27T03:28:54.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://blog.guoyanjun.top/category-sitemap.xml</loc>
-        <lastmod>2017-03-30T10:14:59.000Z</lastmod>
+        <loc>http://guoyanjun.top/blog/category-sitemap.xml</loc>
+        <lastmod>2017-03-29T03:24:59.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://blog.guoyanjun.top/tag-sitemap.xml</loc>
-        <lastmod>2017-03-30T10:14:59.000Z</lastmod>
+        <loc>http://guoyanjun.top/blog/tag-sitemap.xml</loc>
+        <lastmod>2017-03-29T03:24:59.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://guoyanjun.top/blog/index.html</loc>
+        <lastmod>2017-03-29T03:24:59.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://www.guoyanjun.top/index.html</loc>
+        <lastmod>2017-03-29T03:24:59.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://guoyanjun.top/blog/index/index.html</loc>
+        <lastmod>2017-03-29T03:24:59.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://guoyanjun.top/blog/essay/index.html</loc>
+        <lastmod>2017-03-29T03:24:59.000Z</lastmod>
+    </sitemap>
+    
+    <sitemap>
+        <loc>http://guoyanjun.top/blog/archives/index.html</loc>
+        <lastmod>2017-03-29T03:24:59.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://guoyanjun.top/blog/tags/index.html</loc>
+        <lastmod>2017-03-29T03:24:59.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://guoyanjun.top/blog/about/index.html</loc>
+        <lastmod>2017-03-29T03:24:59.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://guoyanjun.top/blog/2016/03/21/hexo-blog-to-ad-a-reward-function.html</loc>
+        <lastmod>2017-03-29T05:16:01.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://guoyanjun.top/blog/2015/12/24/hexo-comands-and-some-usage.html</loc>
+        <lastmod>2017-03-29T03:24:59.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://guoyanjun.top/blog/2017/03/06/mac-instalation-nodejs-(graphic-detail-steps)-and-sublimetext-run-javascript-console.html</loc>
+        <lastmod>2017-03-29T03:24:59.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://guoyanjun.top/blog/2017/02/16/ios-silent-way-to-send-mail-(skpsmtpmesage).html</loc>
+        <lastmod>2017-03-29T03:24:59.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://guoyanjun.top/blog/2017/02/20/analysis-of-ios-loading-single-image-leading-to-colapse.html</loc>
+        <lastmod>2017-03-29T03:24:59.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://guoyanjun.top/blog/2016/10/01/on-the-site-to-use-plug-ins.html</loc>
+        <lastmod>2017-03-29T03:24:59.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://guoyanjun.top/blog/2012/12/14/met-again.html</loc>
+        <lastmod>2017-03-29T03:24:59.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://guoyanjun.top/blog/2017/02/27/ios-modular-programing-framework-behive.html</loc>
+        <lastmod>2017-03-29T03:24:59.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://guoyanjun.top/blog/2017/03/07/the-most-complete-set-of-ios-development-tols.html</loc>
+        <lastmod>2017-03-29T03:24:59.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://guoyanjun.top/blog/2015/04/16/naging.html</loc>
+        <lastmod>2017-03-29T03:24:59.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://guoyanjun.top/blog/2015/07/03/tactic.html</loc>
+        <lastmod>2017-03-29T03:24:59.000Z</lastmod>
     </sitemap>
 
 </sitemapindex>
