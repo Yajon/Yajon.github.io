@@ -1,144 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
   <url>
-    <loc>http://guoyanjun.top/blog/2016/10/01/on-the-site-to-use-plug-ins.html</loc>
-    
-    <lastmod>2017-04-05T06:06:03.000Z</lastmod>
-    
+    <loc>https://yojoy.top/blog/blog//2020/10/05/about-this-site-theme-tag-tag-plugins.html</loc>
+    <lastmod>2020-10-05</lastmod>
   </url>
-  
   <url>
-    <loc>http://guoyanjun.top/blog/2017/03/15/set-up-gh-pages-branch-on-github.html</loc>
-    
-    <lastmod>2017-04-05T06:06:03.000Z</lastmod>
-    
+    <loc>https://yojoy.top/blog/blog//2020/03/15/github-one-click-deployment.html</loc>
+    <lastmod>2020-03-15</lastmod>
   </url>
-  
   <url>
-    <loc>http://guoyanjun.top/blog/2013/05/25/s-ink.html</loc>
-    
-    <lastmod>2017-04-05T06:06:03.000Z</lastmod>
-    
+    <loc>https://yojoy.top/blog/blog//2017/05/26/ios-bluetoth-development-(1)-bluetoth-related-basic-knowledge.html</loc>
+    <lastmod>2017-05-26</lastmod>
   </url>
-  
   <url>
-    <loc>http://guoyanjun.top/blog/2015/07/03/tactic.html</loc>
-    
-    <lastmod>2017-04-05T06:06:03.000Z</lastmod>
-    
+    <loc>https://yojoy.top/blog/blog//2017/05/21/the-mac-version-of-intelij-idea-creates-the-web-project-and-deploys-the-servlet.html</loc>
+    <lastmod>2017-05-21</lastmod>
   </url>
-  
   <url>
-    <loc>http://guoyanjun.top/blog/2012/12/14/met-again.html</loc>
-    
-    <lastmod>2017-04-05T06:06:03.000Z</lastmod>
-    
+    <loc>https://yojoy.top/blog/blog//2017/04/14/the-only-rhyme.html</loc>
+    <lastmod>2017-04-14</lastmod>
   </url>
-  
   <url>
-    <loc>http://guoyanjun.top/blog/2017/03/07/the-most-complete-set-of-ios-development-tols.html</loc>
-    
-    <lastmod>2017-04-05T06:06:03.000Z</lastmod>
-    
+    <loc>https://yojoy.top/blog/blog//2017/04/04/remember-the-qingming-rain.html</loc>
+    <lastmod>2017-04-04</lastmod>
   </url>
-  
   <url>
-    <loc>http://guoyanjun.top/blog/2015/04/16/naging.html</loc>
-    
-    <lastmod>2017-04-05T06:06:03.000Z</lastmod>
-    
+    <loc>https://yojoy.top/blog/blog//2017/03/15/building-gh-pages-branches-on-github.html</loc>
+    <lastmod>2017-03-15</lastmod>
   </url>
-  
   <url>
-    <loc>http://guoyanjun.top/blog/2017/02/16/ios-silent-way-to-send-mail-(skpsmtpmesage).html</loc>
-    
-    <lastmod>2017-04-05T06:06:02.000Z</lastmod>
-    
+    <loc>https://yojoy.top/blog/blog//2017/03/07/the-most-comprehensive-colection-of-ios-development-tols.html</loc>
+    <lastmod>2017-03-07</lastmod>
   </url>
-  
   <url>
-    <loc>http://guoyanjun.top/blog/2015/12/24/hexo-comands-and-some-usage.html</loc>
-    
-    <lastmod>2017-04-05T06:06:02.000Z</lastmod>
-    
+    <loc>https://yojoy.top/blog/blog//2017/03/06/mac-instals-nodejs-(detailed-steps)-and-sublimetext-runs-the-javascript-console.html</loc>
+    <lastmod>2017-03-06</lastmod>
   </url>
-  
   <url>
-    <loc>http://guoyanjun.top/blog/2017/02/20/analysis-of-ios-loading-single-image-leading-to-colapse.html</loc>
-    
-    <lastmod>2017-04-05T06:06:02.000Z</lastmod>
-    
+    <loc>https://yojoy.top/blog/blog//2017/02/27/ios-modular-programing-framework-behive.html</loc>
+    <lastmod>2017-02-27</lastmod>
   </url>
-  
   <url>
-    <loc>http://guoyanjun.top/blog/2015/12/25/hexo-blog-environment-to-build-for-mac.html</loc>
-    
-    <lastmod>2017-04-05T06:06:02.000Z</lastmod>
-    
+    <loc>https://yojoy.top/blog/blog//2017/02/16/ios-sends-mesages-silently-(skpsmtpmesage).html</loc>
+    <lastmod>2017-02-16</lastmod>
   </url>
-  
   <url>
-    <loc>http://guoyanjun.top/blog/2016/10/10/hexo-custom-page-home-page.html</loc>
-    
-    <lastmod>2017-04-05T06:06:02.000Z</lastmod>
-    
+    <loc>https://yojoy.top/blog/blog//2016/10/01/about-the-plug-in-used-by-this-site.html</loc>
+    <lastmod>2016-10-01</lastmod>
   </url>
-  
   <url>
-    <loc>http://guoyanjun.top/blog/2017/03/06/mac-instalation-nodejs-(graphic-detail-steps)-and-sublimetext-run-javascript-console.html</loc>
-    
-    <lastmod>2017-04-05T06:06:02.000Z</lastmod>
-    
+    <loc>https://yojoy.top/blog/blog//2016/03/28/hexo-custom-page-for-home-page.html</loc>
+    <lastmod>2016-03-28</lastmod>
   </url>
-  
   <url>
-    <loc>http://guoyanjun.top/blog/2017/02/27/ios-modular-programing-framework-behive.html</loc>
-    
-    <lastmod>2017-04-05T06:06:02.000Z</lastmod>
-    
+    <loc>https://yojoy.top/blog/blog//2016/01/08/hexo-blog-ad-reward-function.html</loc>
+    <lastmod>2016-01-08</lastmod>
   </url>
-  
   <url>
-    <loc>http://guoyanjun.top/blog/2016/03/21/hexo-blog-to-ad-a-reward-function.html</loc>
-    
-    <lastmod>2017-04-05T06:06:02.000Z</lastmod>
-    
+    <loc>https://yojoy.top/blog/blog//2016/01/05/hexo-baidu-actively-submit-links.html</loc>
+    <lastmod>2016-01-05</lastmod>
   </url>
-  
   <url>
-    <loc>http://guoyanjun.top/blog/about/index.html</loc>
-    
-    <lastmod>2017-04-05T02:43:05.000Z</lastmod>
-    
+    <loc>https://yojoy.top/blog/blog//2016/01/04/ios-open-source-project-and-tol-plug-in-on-github.html</loc>
+    <lastmod>2016-01-04</lastmod>
   </url>
-  
   <url>
-    <loc>http://guoyanjun.top/blog/home/index.html</loc>
-    
-    <lastmod>2017-03-23T09:46:39.000Z</lastmod>
-    
+    <loc>https://yojoy.top/blog/blog//2015/12/25/hexo-blog-environment-set-up-for-mac.html</loc>
+    <lastmod>2015-12-25</lastmod>
   </url>
-  
   <url>
-    <loc>http://guoyanjun.top/blog/essay/index.html</loc>
-    
-    <lastmod>2017-03-22T08:53:43.000Z</lastmod>
-    
+    <loc>https://yojoy.top/blog/blog//2015/12/24/the-hexo-comand-and-some-usage.html</loc>
+    <lastmod>2015-12-24</lastmod>
   </url>
-  
   <url>
-    <loc>http://guoyanjun.top/blog/tags/index.html</loc>
-    
-    <lastmod>2017-03-20T02:10:29.000Z</lastmod>
-    
+    <loc>https://yojoy.top/blog/blog//2015/12/05/ios-loading-single-shet-pictures-leading-to-crash-analysis.html</loc>
+    <lastmod>2015-12-05</lastmod>
   </url>
-  
   <url>
-    <loc>http://guoyanjun.top/blog//404.html</loc>
-    
-    <lastmod>2017-03-17T03:38:41.000Z</lastmod>
-    
+    <loc>https://yojoy.top/blog/blog//2015/12/01/c-language-sorting-algorithm-and-detailed.html</loc>
+    <lastmod>2015-12-01</lastmod>
   </url>
-  
-</urlset>
+  <url>
+    <loc>https://yojoy.top/blog/blog//2015/07/03/tactic.html</loc>
+    <lastmod>2015-07-03</lastmod>
+  </url>
+  <url>
+    <loc>https://yojoy.top/blog/blog//2015/04/16/naging.html</loc>
+    <lastmod>2015-04-16</lastmod>
+  </url>
+  <url>
+    <loc>https://yojoy.top/blog/blog//2013/05/25/s-ink.html</loc>
+    <lastmod>2013-05-25</lastmod>
+  </url>
+  <url>
+    <loc>https://yojoy.top/blog/blog//2012/12/14/met-again.html</loc>
+    <lastmod>2012-12-14</lastmod>
+  </url>
+</urlset> 
